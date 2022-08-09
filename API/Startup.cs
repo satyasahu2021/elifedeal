@@ -65,7 +65,7 @@ namespace API
 
             if (env.IsDevelopment())
             {
-                 app.UseDeveloperExceptionPage();
+                // app.UseDeveloperExceptionPage();
                 
             }
 
