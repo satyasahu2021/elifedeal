@@ -14,6 +14,10 @@ const routes: Routes = [
   {path:'not-found', component: NotFoundComponent, data: {breadcrumb: 'Not Found'}},
   {path:'shop' , loadChildren:() => import('./shop/shop.module').then(modm => modm.ShopModule),
   data: {breadcrumb: 'Shop'}},
+  {path:'basket' , loadChildren:() => import('./basket/basket.module').then(modm => modm.BasketModule),
+  data: {breadcrumb: 'Basket'}},
+  {path:'checkout' , loadChildren:() => import('./checkout/checkout.module').then(modm => modm.CheckoutModule),
+  data: {breadcrumb: 'Checkout'}},
   {path:'**' , redirectTo:'not-found',pathMatch:'full' }
 
 ];
