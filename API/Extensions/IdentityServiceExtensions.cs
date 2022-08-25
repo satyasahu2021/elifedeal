@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Text;
 using Core.Entities.Identity;
 using Infrastructure.Identity;
@@ -26,16 +27,19 @@ namespace API.Extensions
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(Options =>
             {
+                   // Options.SaveToken = true;
+                    //Options.RequireHttpsMetadata = false;
                 Options.TokenValidationParameters = new TokenValidationParameters
                 {
+                    
                     ValidateIssuerSigningKey = true,
-                    //IssuerSigningKey = Encoding.UTF8.GetBytes(config["Token:Key"]),
-                    //IssuerSigningKeys = new SymmetricSecurityK
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config
-                    ["Token:Key"])),
-                    ValidIssuer = config["Token:Issuer"],
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    ValidIssuer = config["Token:Issuer"],
+                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config
+                    //["Token:Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Token:Key"]))
+                    
                     
                 };
             });
