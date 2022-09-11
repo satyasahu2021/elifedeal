@@ -35,6 +35,9 @@ namespace Infrastructure.Identity.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
+                    
+                    b.Property<string>("PhoneNo")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("State")
                         .HasColumnType("TEXT");

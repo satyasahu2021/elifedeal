@@ -10,6 +10,8 @@ namespace API.Dtos
         [Required]
          public string? LastName { get; set;}
 
+         public string? PhoneNo { get; set; }
+
         [Required]
          public string? Street { get; set;}
 

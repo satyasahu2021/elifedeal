@@ -11,6 +11,8 @@ namespace Core.Entities.Identity
 
          public string? LastName { get; set;}
 
+         public string? PhoneNo { get; set; }
+
          public string? Street { get; set;}
 
          public string? City { get; set;}

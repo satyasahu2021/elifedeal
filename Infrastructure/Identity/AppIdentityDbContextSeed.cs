@@ -16,10 +16,12 @@ namespace Infrastructure.Identity
                     DisplayName="Satya",
                     Email= "sahusatya2002@gmail.com",
                     UserName ="sahusatya2002@gmail.com",
+                    PhoneNumber="8017585020",
                     Address = new Address
                     {
                         FirstName = "Satya",
                         LastName = "sahu",
+                        PhoneNo = "8017585020",
                         Street = " 10 The Street",
                         City ="Kolkata",
                         State ="WB",
