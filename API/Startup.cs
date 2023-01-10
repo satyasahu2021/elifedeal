@@ -41,13 +41,25 @@ namespace API
           
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddControllers();
+            var value = _config["testelifesecret"]; 
+            // services.AddDbContext<StoreContext>(x => 
+            //  x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             services.AddDbContext<StoreContext>(x => 
-             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+             x.UseSqlite(value));
              
 
-             services.AddDbContext<AppIdentityDbContext>(x => 
+
+            var value1 = _config["testidentitysecret"];
+
+
+            //  services.AddDbContext<AppIdentityDbContext>(x => 
+            //  {
+            //     x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+            //  });
+
+            services.AddDbContext<AppIdentityDbContext>(x => 
              {
-                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+                x.UseSqlite(value1);
              });
 
                 

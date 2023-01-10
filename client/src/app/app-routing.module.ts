@@ -23,6 +23,13 @@ const routes: Routes = [
    loadChildren:() => import('./checkout/checkout.module').then(modm => modm.CheckoutModule),
   data: {breadcrumb: 'Checkout'}},
 
+  {
+    path: 'orders',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule),
+    data: { breadcrumb: 'Orders' }
+  },
+
   {path:'account' , loadChildren:() => import('./account/account.module').then(modm => modm.AccountModule),
   data: {breadcrumb: {skip: true}}},
 

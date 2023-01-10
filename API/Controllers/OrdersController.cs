@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -30,6 +31,7 @@ namespace API.Controllers
         public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
         {
             var email = HttpContext.User.RetrieveEmailFromPrincipal();
+            Console.Write(User);
 
             var address = _mapper.Map<OrderAddressDto, Address>(orderDto.ShipToAddress);
 

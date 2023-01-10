@@ -12,5 +12,12 @@ namespace API.Extensions
 
             //return user?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
         }
+
+         public static string RetrievePhoneFromPrincipal(this ClaimsPrincipal user)
+        {
+            return user.FindFirstValue(ClaimTypes.MobilePhone);
+
+            //return user?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
+        }
     }
 }
